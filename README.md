@@ -5,83 +5,76 @@ Simple Java-based websocket client for Matlab.
 ## Installation
 
 The package can be installed by [tbxmanager](http://www.tbxmanager.com):
-```
-#!matlab
 
+```
 tbxmanager install matwebsocks
 ```
 
 Then add java libraries to the static java path in `[prefdir filesep 'javaclasspath.txt']` by
-```
-#!matlab
 
+```
 matws_install()
 ```
+
 and restart Matlab (really, this is required). Note that the libraries must be put on the **static** java classpath. Loading them dynamically via `javaaddpath()` will **not** work.
 
 ## Updating
 
 To update the matwebsocks package (and other installed packages as well) to the latest version, use
+
 ```
-#!matlab
 tbxmanager update
 ```
 
 ## Usage
 
 Create a new websocket object pointing to a given url:
-```
-#!matlab
 
+```
 socket = sk.stuba.fchpt.kirp.MatlabWebSocketClient(java.net.URI(socket_url))
 ```
 
 Connect to the websocket:
-```
-#!matlab
 
+```
 socket.connect()
 ```
 
 Send a string over the socket:
-```
-#!matlab
 
+```
 socket.send('my message')
 ```
 
 Get the last received string message:
-```
-#!matlab
 
+```
 msg = socket.message
 ```
 
 Add a custom callback which will be called when a new message arrives:
-```
-#!matlab
 
+```
 set(socket, 'MessageReceivedCallback', @(s, e) callback(s, e))
 ```
+
 where `callback` is a function which takes two inputs: the socket object `s` and the event `e`. The message is available in `e.message`.
 
 Close the websocket:
-```
-#!matlab
 
+```
 socket.close()
 ```
 
 ## More comfortable usage
 
-Install the [wsclient package](http://bitbucket.org/kvasnica/wsclient).
+Install the [wsclient package](http://github.com/kvasnica/wsclient).
 
 ## Demo
 
 In this demo we connect to a websocket echo server:
-```
-#!matlab
 
+```
 % create the socket
 server = 'ws://kirp.chtf.stuba.sk:8025/test/echo';
 socket = sk.stuba.fchpt.kirp.MatlabWebSocketClient(java.net.URI(server));
