@@ -74,7 +74,7 @@ Install the [wsclient package](http://github.com/kvasnica/wsclient).
 
 In this demo we connect to a websocket echo server:
 
-```
+```matlab
 % create the socket
 server = 'ws://echo.websocket.org/';
 socket = sk.stuba.fchpt.kirp.MatlabWebSocketClient(java.net.URI(server));
