@@ -16,7 +16,7 @@ Then add java libraries to the static java path in `[prefdir filesep 'javaclassp
 matws_install()
 ```
 
-and restart Matlab (really, this is required). Note that the libraries must be put on the **static** java classpath. Loading them dynamically via `javaaddpath()` will **not** work.
+Finally, **restart Matlab** (really, this is required). Note that the libraries must be put on the **static** java classpath. Loading them dynamically via `javaaddpath()` will **not** work.
 
 ## Updating
 
@@ -76,7 +76,7 @@ In this demo we connect to a websocket echo server:
 
 ```
 % create the socket
-server = 'ws://kirp.chtf.stuba.sk:8025/test/echo';
+server = 'ws://swsb.uiam.sk/test/echo';
 socket = sk.stuba.fchpt.kirp.MatlabWebSocketClient(java.net.URI(server));
 
 % set the callback which displays received messages
