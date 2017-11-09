@@ -76,7 +76,7 @@ In this demo we connect to a websocket echo server:
 
 ```
 % create the socket
-server = 'ws://swsb.uiam.sk/test/echo';
+server = 'ws://echo.websocket.org/';
 socket = sk.stuba.fchpt.kirp.MatlabWebSocketClient(java.net.URI(server));
 
 % set the callback which displays received messages
