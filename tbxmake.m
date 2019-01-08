@@ -7,7 +7,7 @@ function tbxmake
 config.package = 'matwebsocks';
 
 % version to make
-config.version = '1.2';
+config.version = '1.3';
 
 % package repository
 config.repository = 'stable';
@@ -22,13 +22,13 @@ config.directory = 'src/';
 config.format = 'zip';
 
 % upload destination
-config.destination = ['kvasnica@h1:~/public_html/tbxpool/' config.package '/'];
+config.destination = ['h1:~/public_html/tbxpool/' config.package '/'];
 
 % upload method
 config.method = 'scp';
 
 % URL of the package for tbxmanager
-config.url = ['http://www.kirp.chtf.stuba.sk/~kvasnica/tbxpool/' config.package '/'];
+config.url = ['http://www.uiam.sk/~kvasnica/tbxpool/' config.package '/'];
 
 
 %% Do not edit beyond this line

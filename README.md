@@ -26,6 +26,14 @@ To update the matwebsocks package (and other installed packages as well) to the 
 tbxmanager update
 ```
 
+followed by
+
+```
+matws_install
+```
+
+Then restart Matlab.
+
 ## Usage
 
 Create a new websocket object pointing to a given url:
@@ -65,6 +73,23 @@ Close the websocket:
 ```
 socket.close()
 ```
+
+### Secure websockets
+
+Starting from version 1.3, `matwebsocks` supports secure websocket connections via the `wss` protocol:
+```
+socket_url = 'wss://echo.websocket.org';
+socket = sk.stuba.fchpt.kirp.MatlabWebSocketClient(java.net.URI(socket_url));
+socket.connect();
+socket.send('hello from Matlab');
+socket.message
+
+ans =
+
+hello from Matlab
+```
+
+Note that Matlab has some issues with self-signed SSL certificates see [this discussion](https://www.mathworks.com/matlabcentral/answers/92506-how-can-i-configure-matlab-to-allow-access-to-self-signed-https-servers). Let's Encrypt certificates are supported (I think) from R2018b onwards.
 
 ## More comfortable usage
 
