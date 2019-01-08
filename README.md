@@ -6,13 +6,13 @@ Simple Java-based websocket client for Matlab.
 
 The package can be installed by [tbxmanager](http://www.tbxmanager.com):
 
-```
+```matlab
 tbxmanager install matwebsocks
 ```
 
 Then add java libraries to the static java path in `[prefdir filesep 'javaclasspath.txt']` by
 
-```
+```matlab
 matws_install()
 ```
 
@@ -22,13 +22,13 @@ Finally, **restart Matlab** (really, this is required). Note that the libraries 
 
 To update the matwebsocks package (and other installed packages as well) to the latest version, use
 
-```
+```matlab
 tbxmanager update
 ```
 
 followed by
 
-```
+```matlab
 matws_install
 ```
 
@@ -38,31 +38,31 @@ Then restart Matlab.
 
 Create a new websocket object pointing to a given url:
 
-```
+```matlab
 socket = sk.stuba.fchpt.kirp.MatlabWebSocketClient(java.net.URI(socket_url))
 ```
 
 Connect to the websocket:
 
-```
+```matlab
 socket.connect()
 ```
 
 Send a string over the socket:
 
-```
+```matlab
 socket.send('my message')
 ```
 
 Get the last received string message:
 
-```
+```matlab
 msg = socket.message
 ```
 
 Add a custom callback which will be called when a new message arrives:
 
-```
+```matlab
 set(socket, 'MessageReceivedCallback', @(s, e) callback(s, e))
 ```
 
@@ -70,14 +70,14 @@ where `callback` is a function which takes two inputs: the socket object `s` and
 
 Close the websocket:
 
-```
+```matlab
 socket.close()
 ```
 
 ### Secure websockets
 
 Starting from version 1.3, `matwebsocks` supports secure websocket connections via the `wss` protocol:
-```
+```matlab
 socket_url = 'wss://echo.websocket.org';
 socket = sk.stuba.fchpt.kirp.MatlabWebSocketClient(java.net.URI(socket_url));
 socket.connect();
