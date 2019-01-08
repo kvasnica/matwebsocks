@@ -89,7 +89,7 @@ ans =
 hello from Matlab
 ```
 
-Note that Matlab has some issues with self-signed SSL certificates see [this discussion](https://www.mathworks.com/matlabcentral/answers/92506-how-can-i-configure-matlab-to-allow-access-to-self-signed-https-servers). Let's Encrypt certificates are supported (I think) from R2018b onwards.
+Note that Matlab has some issues with self-signed SSL certificates. For more information, see [this discussion](https://www.mathworks.com/matlabcentral/answers/92506-how-can-i-configure-matlab-to-allow-access-to-self-signed-https-servers). Let's Encrypt certificates are supported (I think) from R2018b onwards.
 
 ## More comfortable usage
 
